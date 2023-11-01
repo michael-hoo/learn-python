@@ -1,0 +1,113 @@
+<!DOCTYPE html><!--页面文档类型声明: 这里表明此页面是符合 HTML5 标准的-->
+<html>
+
+<head><!--写在 head 标签中的内容, 不会显示在浏览器的窗口中-->
+    <meta charset="utf-8"><!--编码, 统一使用 utf-8-->
+    <title>古木的技术专栏</title><!--标签名-->
+    <!--层叠样式表一般写在 head 中的 style 标签中-->
+    <style>
+        /*所有的 <h1> 标签都会采用下面的样式*/
+        h1 { /*标签内部的注释应该用这种格式*/
+            color: blue; /*定义颜色*/
+            font-size: 2cm; /*定义字号*/
+            font-family:Georgia, 'Times New Roman', Times, serif;/*定义字体*/
+        }
+        p {
+            font-size: 1cm;
+        }
+        /*可以看出, 这种样式的优先级别会更高*/
+        p:first-letter { /*所有<p>标签的第一个字进行额外定义*/
+            font-size: 1.5cm;
+            color: bisque;
+        }
+        .a {
+            color: green; /*所有 class="a" 的元素均设置为绿色*/
+        }
+        .b {
+            color: red; /*所有 class="b" 的元素均设置为红色*/
+        }
+        a { /*修改所有链接的属性*/
+            color: gray;
+            text-decoration: none; /*去掉链接的下划线*/
+        }
+        a:hover { /*hover表示鼠标悬停*/
+            color: red;
+        }
+    </style>
+</head>
+
+<body><!--body 中的内容会显示在浏览器的窗口中-->
+    <div id="top"></div>
+    <!--&lt; 和 &gt; 分别代表左尖括号和右尖括号-->
+    <h1>&lt;古木&gt;的博客</h1><!--一级标题-->
+    <hr><!--水平分割线-->
+    <!--浏览器有空格折叠的功能, 无论你是敲10个空格还是10个换行, 最后都只会留一个空格-->
+    <!--想要多个空格可以这样-->
+    1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2
+    <br><!--换行标签-->
+    <h2>古木喜欢的网站</h2>
+    <ol><!--有序列表及列表的嵌套-->
+        <!--这里 target 属性不加, 默认在当前页面打开百度;
+            加了 target="_blank" 表示在新标签中打开百度.
+        -->
+        <li><a href="https://www.baidu.com/" target="_blank">百度</a></li>
+        <li><a href="https://www.vip.com/" target="_blank">唯品会</a></li>
+        <li>视频网站
+            <ul><!--无序列表-->
+                <li>
+                    <a href="https://www.bilibili.com/" target="_blank">bilibili</a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <dl><!--定义列表: 一般用定义列表都是在 dt 里放张图片, 进行图文混排-->
+        <!--定义标题-->
+        <dt><img src="https://www.python.org/static/img/python-logo.png"></dt>
+        <!--定义描述-->
+        <dd>
+            <dl><!--定义列表也可以嵌套-->
+                <dt>面向对象的编程语言</dt>
+                <dd>基本概念: 类, 对象</dd>
+                <dd>三大特性: 封装, 继承, 多态</dd>
+            </dl>
+        </dd>
+        <dd>动态弱类型语言, 需要 Python 解释器才能执行.</dd>
+    </dl>
+    <!--段落标签, 自然也可以换行, 有段间距-->
+    <!--<sup>和<sub>, 分别是上标和下标-->
+    <p class="a">风急天高猿啸<sup>哀</sup>, 渚清沙白鸟飞<sub>回</sub>。</p>
+    <!--<em>是斜体, <strong>是粗体-->
+    <p class="b">无边落木<em>萧萧下</em>, 不尽长江<strong>滚滚来</strong>。</p>
+    <!--<ins>是下划线, <del>是删除线-->
+    <p class="a">万里<ins>悲秋</ins>常作客, 百年<del>多病</del>独登台。</p>
+    <p class="b">艰难&copy;苦恨繁霜&reg;鬓, 潦倒新停浊酒&trade;杯。</p>
+
+    <!--通过 onclick 属性调用 JS 中创建的函数(函数名记得后面要加括号)-->
+    <button onclick="showWrite()">确认</button><!--按钮标签-->
+    <!--JS 代码一般放在 body 的最后面-->
+    <script>
+        /*JS 是这样定义函数的:
+            - 关键字不是 def, 而是 function
+            - 函数命名不用蛇形命名法, 而用驼峰命名法
+            - 函数体用不是用冒号加缩进, 而是用花括号加缩进
+        JS 也是面向对象的语言, 内置了很多对象不用你创建, 只管用就好
+        */
+        function showWrite() {
+            window.alert('作者: 李白') /*window: 窗口对象; alter(): 弹出警告框*/
+        }
+        /*注: HTML 中代码写错了, 要在浏览器中的 console 中看*/
+    </script>
+    <br>
+    <!--锚点链接-->
+    <a href="#top">回顶部</a>&nbsp;
+    <!--功能链接: 点击可以给指定邮箱发邮件!-->
+    <a href="mailto:hunan1217@qq.com">联系站长</a>
+</body>
+
+</html>
