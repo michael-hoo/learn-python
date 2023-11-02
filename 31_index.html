@@ -4,10 +4,9 @@
 <head><!--写在 head 标签中的内容, 不会显示在浏览器的窗口中-->
     <meta charset="utf-8"><!--编码, 统一使用 utf-8-->
     <title>古木的技术专栏</title><!--标签名-->
-    <!--层叠样式表一般写在 head 中的 style 标签中-->
-    <style>
+    <style>/*层叠样式表一般写在 head 中的 style 标签中*/
         /*所有的 <h1> 标签都会采用下面的样式*/
-        h1 { /*标签内部的注释应该用这种格式*/
+        h1 {
             color: blue; /*定义颜色*/
             font-size: 2cm; /*定义字号*/
             font-family:Georgia, 'Times New Roman', Times, serif;/*定义字体*/
@@ -103,11 +102,50 @@
         }
         /*注: HTML 中代码写错了, 要在浏览器中的 console 中看*/
     </script>
+    <img src="/Content/img/sample/kefu.png" />
     <br>
     <!--锚点链接-->
     <a href="#top">回顶部</a>&nbsp;
     <!--功能链接: 点击可以给指定邮箱发邮件!-->
-    <a href="mailto:hunan1217@qq.com">联系站长</a>
+    <a href="mailto:hunan1217@qq.com">联系站长</a>&nbsp;
+    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1034809890&site=qq&menu=yes">
+        <img border="0" src="http://wpa.qq.com/pa?p=2:1034809890:53" alt="点击这里" title="点击这里">
+    </a>
+    <table border="1"><!--表格, 可以用CSS渲染得好看些.-->
+        <caption>学生考试成绩表</caption><!--表格标题-->
+        <tr>
+            <th width="120">姓名</th><!--<th>是表头, 表头是默认居中显示的!-->
+            <th width="100">语文</th><!--通过 width 属性设置宽度-->
+            <th width="100">数学</th>
+            <th width="100">英语</th>
+            <th width="100">体育</th>
+        </tr>
+        <tr>
+            <td align="center">王大锤</td>
+            <td align="center">90</td>
+            <td align="center">80</td>
+            <td align="center">70</td>
+            <td align="center">60</td>
+        </tr>
+        <tr>
+            <td align="center">李二狗</td>
+            <td align="center">88</td>
+            <td align="center">77</td>
+            <td align="center">66</td>
+            <td align="center">55</td>
+        </tr>
+        <tr>
+            <td rowspan="2" align="center">古木</td><!--跨2行-->
+            <td colspan="3" align="center">98</td><!--跨3列-->
+            <td align="center">97</td>
+        </tr>
+        <tr>
+            <td align="center">88</td>
+            <td align="center">77</td>
+            <td align="center">66</td>
+            <td align="center">55</td>
+        </tr>
+    </table>
 </body>
 
 </html>
